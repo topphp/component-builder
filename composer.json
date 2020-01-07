@@ -36,7 +36,10 @@
     "scripts": {
         "test": "phpunit",
         "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests"
+        "fix-style": "phpcbf src tests",
+        "post-root-package-install": [
+            "@php prefill.php"
+        ]
     },
     "extra": {
         "branch-alias": {
