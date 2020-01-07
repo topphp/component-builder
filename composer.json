@@ -1,5 +1,5 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "topphp/component-builder",
     "type": "library",
     "description": ":package_description",
     "keywords": [
