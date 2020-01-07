@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace topphp\componentBuilder;
+namespace topphp\Test;
 
 class ExampleTest extends \PHPUnit\Framework\TestCase
 {
