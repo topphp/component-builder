@@ -3,16 +3,16 @@
     "type": "library",
     "description": ":package_description",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "vendor",
+        "package_name"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/topphp/component-builder",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "author_name",
+            "email": "author_email",
+            "homepage": "author_website",
             "role": "Developer"
         }
     ],
