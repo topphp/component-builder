@@ -37,15 +37,20 @@
         "test": "phpunit",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests",
-        "post-root-package-install": [
-            "@composer install"
-        ]
+        "post-root-package-install": []
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.0.0-dev"
+        },
+        "think": {
+            "services": [],
+            "config": {
+                "builder": "config/builder.php"
+            }
         }
     },
+    "minimum-stability": "dev",
     "config": {
         "sort-packages": true
     }

@@ -7,14 +7,13 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```topphp``` ```topphp``` ```https://github.com/topphp``` ```sleep@kaituocn.com``` ```topphp``` ```component-builder``` ```组件生成器``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
+> 这就是你描述的地方。试着把它限制在一两段内，然后可能会提到
+您支持的psr，以避免与用户和贡献者产生任何混淆。
 
 ## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
+> 组件结构
 
 ```
 bin/        
@@ -32,14 +31,14 @@ vendor/
 Via Composer
 
 ``` bash
-$ composer require topphp/component-builder
+$ composer create-project topphp/component-builder 你的组件名称
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new topphp\component-builder();
-echo $skeleton->echoPhrase('Hello, League!');
+$skeleton = new topphp\componentBuilder();
+echo $skeleton->echoPhrase('Hello, TOPPHP!');
 ```
 
 ## Change log
