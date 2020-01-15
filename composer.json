@@ -53,5 +53,11 @@
     "minimum-stability": "dev",
     "config": {
         "sort-packages": true
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer"
+        }
     }
 }
