@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace topphp\Test;
 
-class ExampleTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class ExampleTest extends TestCase
 {
     /**
      * Test that true does in fact equal true
