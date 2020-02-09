@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace topphp\Test;
+namespace Topphp\Test;
 
 use PHPUnit\Framework\TestCase;
 
