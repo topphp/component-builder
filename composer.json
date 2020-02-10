@@ -33,7 +33,7 @@
         "test": "phpunit",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests",
-        "pre-install-cmd": "Topphp\\Install\\Shell::init"
+        "pre-install-cmd": "Topphp\\Install\\Shell::init",
         "pre-update-cmd": "Topphp\\Install\\Shell::init"
     },
     "extra": {
