@@ -81,7 +81,7 @@ class ComposerInfo
 
     private function setComponentName()
     {
-        $name = $this->io->ask("<info>请输入你的组件名称(topphp/demo):</info>", 'topphp/demo');
+        $name = $this->io->ask("<info>请输入你的组件名称(topphp/topphp-demo):</info>", 'topphp/demo');
         $name = str_replace('\\', '/', $name);
         $name = rtrim($name, '/');
 
