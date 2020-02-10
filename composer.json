@@ -33,7 +33,7 @@
         "test": "phpunit",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests",
-        "post-root-package-install": "Topphp\\Install\\Shell::init"
+        "post-create-project-cmd": "Topphp\\Install\\Shell::init"
     },
     "extra": {
         "branch-alias": {
