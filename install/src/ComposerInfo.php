@@ -77,7 +77,6 @@ class ComposerInfo
 //        $this->optionalInstallPackages(require __DIR__ . '/config.php');
         $this->setRootPackages();
         $this->initPackages();
-        var_dump($this->composerFinal);
     }
 
     private function setComponentName()
