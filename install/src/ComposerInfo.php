@@ -144,7 +144,7 @@ class ComposerInfo
 
         $this->io->write('<info>正在删除安装脚本相关composer配置...</info>');
         unset(
-            $this->composerFinal['autoload']['psr-4']['topphp\\install\\'],
+            $this->composerFinal['autoload']['psr-4']['Topphp\\Install\\'],
             $this->composerFinal['extra']['branch-alias'],
             $this->composerFinal['extra']['optional-packages'],
             $this->composerFinal['scripts']['pre-update-cmd'],
