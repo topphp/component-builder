@@ -74,9 +74,9 @@ class ComposerInfo
         $this->composerFinal['type'] = 'library';
 
         $this->removeDevDependencies();
-        $this->optionalInstallPackages(require __DIR__ . '/config.php');
-//        $this->setRootPackages();
-//        $this->initPackages();
+//        $this->optionalInstallPackages(require __DIR__ . '/config.php');
+        $this->setRootPackages();
+        $this->initPackages();
         var_dump($this->composerFinal);
     }
 
