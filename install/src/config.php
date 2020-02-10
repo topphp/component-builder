@@ -1,14 +1,11 @@
 <?php
-
-declare(strict_types=1);
 /**
- * This file is part of Hyperf.
- *
- * @link     https://www.hyperf.io
- * @document https://doc.hyperf.io
- * @contact  group@hyperf.io
- * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ * 凯拓软件 [临渊羡鱼不如退而结网,凯拓与你一同成长]
+ * Project: component-builder
+ * Date: 2020/2/9 21:45
+ * Author: sleep <sleep@kaituocn.com>
  */
+declare(strict_types=1);
 
 return [
     'packages'    => [
