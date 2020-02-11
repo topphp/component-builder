@@ -17,7 +17,7 @@ return [
     ],
     'questions'   => [
         'framework' => [
-            'question'       => 'Do you want to use hyperf/framework component ?',
+            'question'       => '需要安装 topthink/framework 组件吗?',
             'default'        => 'n',
             'required'       => false,
             'force'          => true,
@@ -26,7 +26,7 @@ return [
                 1 => [
                     'name'     => 'yes',
                     'packages' => [
-                        'hyperf/framework',
+                        'topthink/framework',
                     ],
                 ],
             ],

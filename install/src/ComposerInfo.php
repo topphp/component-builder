@@ -66,20 +66,24 @@ class ComposerInfo
         $this->requires       = $this->rootPackage->getRequires();
         $this->devRequires    = $this->rootPackage->getDevRequires();
         $this->stabilityFlags = $this->rootPackage->getStabilityFlags();
-
+        // 设置composer参数
         $name = $this->setComponentName();
         $this->setDescription();
         $this->setLicense();
         $this->setNamespace($name);
         $this->composerFinal['type'] = 'library';
-
         $this->removeDevDependencies();
-//        $this->optionalInstallPackages(require __DIR__ . '/config.php');
+        $this->optionalInstallPackages(require __DIR__ . '/config.php');
         $this->setRootPackages();
         $this->initPackages();
     }
 
-    private function setComponentName()
+    /**
+     * 设置组件名称
+     * @return string
+     * @author sleep
+     */
+    private function setComponentName(): string
     {
         $name = $this->io->ask("<info>请输入你的组件名称(topphp/topphp-demo):</info>", 'topphp/demo');
         $name = str_replace('\\', '/', $name);
@@ -89,7 +93,11 @@ class ComposerInfo
         return $name;
     }
 
-    private function setLicense()
+    /**
+     * 设置软件许可证
+     * @author sleep
+     */
+    private function setLicense(): void
     {
         $license = $this->io->ask("<info>请设置你的软件许可证(MIT):</info>", 'MIT');
 
@@ -100,7 +108,7 @@ class ComposerInfo
      * 设置组件描述
      * @author sleep
      */
-    private function setDescription()
+    private function setDescription(): void
     {
         $desc = $this->io->ask("<info>填写你的组件描述:</info>", '');
 
@@ -109,10 +117,10 @@ class ComposerInfo
 
     /**
      * 设置命名空间
-     * @param $name
+     * @param string $name
      * @author sleep
      */
-    private function setNamespace($name)
+    private function setNamespace(string $name): void
     {
         // 整理命名空间
         $names = explode('/', $name);
@@ -131,7 +139,7 @@ class ComposerInfo
         $this->composerFinal['autoload']['psr-4'][$namespace . '\\'] = 'src';
     }
 
-    private function removeDevDependencies()
+    private function removeDevDependencies(): void
     {
         $this->io->write('<info>正在删除安装脚本命名空间...</info>');
         foreach ($this->installDevRequires as $installDevRequire) {
@@ -153,7 +161,7 @@ class ComposerInfo
     }
 
     // todo
-    private function optionalInstallPackages(array $config)
+    private function optionalInstallPackages(array $config): void
     {
         foreach ($config['questions'] as $questionName => $question) {
             $defaultOption = $question['default'] ?? 1;
