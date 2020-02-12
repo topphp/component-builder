@@ -19,7 +19,7 @@
 
 ##### 1.安装骨架项目(topphp/topphp-skeleton):
 ```shell
-git clone http://git.n.kaituocn.com/kaituoGroup/topphp/topphp-skeleton.git
+git clone https://github.com/topphp/topphp-skeleton.git
 ```
 ##### 2. 同级目录下添加`topphp`文件夹
 
