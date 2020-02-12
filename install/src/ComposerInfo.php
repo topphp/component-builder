@@ -171,13 +171,14 @@ class ComposerInfo
                 $default
             );
             if ($answer === 'y' || $answer === 'Y') {
-                $this->addOptionalPackages($packageName, $package['version']);
+                $this->addOptionalPackages($packageName, $package);
             }
         }
     }
 
-    private function addOptionalPackages(string $packageName, string $version)
+    private function addOptionalPackages(string $packageName, array $package)
     {
+        $version = $package['version'];
         $this->io->write(sprintf(
             '  - 添加 组件 <info>%s</info> (<comment>%s</comment>)',
             $packageName,
@@ -192,9 +193,13 @@ class ComposerInfo
             'requires',
             $version
         );
-
-        $this->composerFinal['require'][$packageName] = $version;
-        $this->requires[$packageName]                 = $link;
+        if ($package['require']) {
+            $this->composerFinal['require'][$packageName] = $version;
+            $this->requires[$packageName]                 = $link;
+        } else {
+            $this->composerFinal['require-dev'][$packageName] = $version;
+            $this->devRequires[$packageName]                  = $link;
+        }
         try {
             $this->composerJson->write($this->composerFinal);
         } catch (\Exception $e) {
