@@ -165,9 +165,6 @@ class ComposerInfo
     {
         foreach ($config['questions'] as $questionName => $question) {
             $defaultOption = $question['default'] ?? 1;
-            if (isset($this->composerFinal['extra']['optional-packages'][$questionName])) {
-                return;
-            }
             // todo 选择性安装扩展
             $answer = $this->askQuestion($question, $defaultOption);
         }

@@ -8,28 +8,13 @@
 declare(strict_types=1);
 
 return [
-    'packages'    => [
+    'packages' => [
         'topthink/framework' => [
             'version' => '^6.0.2',
-        ],
-    ],
-    'require-dev' => [
-    ],
-    'questions'   => [
-        'framework' => [
-            'question'       => '需要安装 topthink/framework 组件吗?',
-            'default'        => 'n',
-            'required'       => false,
-            'force'          => true,
-            'custom-package' => true,
-            'options'        => [
-                1 => [
-                    'name'     => 'yes',
-                    'packages' => [
-                        'topthink/framework',
-                    ],
-                ],
-            ],
+            'options' => [
+                'question' => '需要安装 topthink/framework 组件吗?',
+                'default'  => 'n'
+            ]
         ],
     ],
 ];
