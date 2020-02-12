@@ -13,6 +13,8 @@ use Composer\Composer;
 use Composer\Factory;
 use Composer\IO\IOInterface;
 use Composer\Json\JsonFile;
+use Composer\Package\Link;
+use Composer\Package\Version\VersionParser;
 use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -160,20 +162,44 @@ class ComposerInfo
         );
     }
 
-    // todo
     private function optionalInstallPackages(array $config): void
     {
-        foreach ($config['questions'] as $questionName => $question) {
-            $defaultOption = $question['default'] ?? 1;
-            // todo 选择性安装扩展
-            $answer = $this->askQuestion($question, $defaultOption);
+        foreach ($config['packages'] as $packageName => $package) {
+            $default = $package['options']['default'];
+            $answer  = $this->io->ask(
+                "<question>{$package['options']['question']}</question> [<comment>{$default}</comment>]",
+                $default
+            );
+            if ($answer === 'y' || $answer === 'Y') {
+                $this->addOptionalPackages($packageName, $package['version']);
+            }
         }
     }
 
-    private function askQuestion(array $question, $defaultOption)
+    private function addOptionalPackages(string $packageName, string $version)
     {
-        $bool = 'n';
-        return $bool;
+        $this->io->write(sprintf(
+            '  - 添加 组件 <info>%s</info> (<comment>%s</comment>)',
+            $packageName,
+            $version
+        ));
+        $versionParser = new VersionParser();
+        $constraint    = $versionParser->parseConstraints($version);
+        $link          = new Link(
+            '__root__',
+            $packageName,
+            $constraint,
+            'requires',
+            $version
+        );
+
+        $this->composerFinal['require'][$packageName] = $version;
+        $this->requires[$packageName]                 = $link;
+        try {
+            $this->composerJson->write($this->composerFinal);
+        } catch (\Exception $e) {
+            $this->io->write("<error>{$e->getMessage()}</error>");
+        }
     }
 
     private function setRootPackages()
