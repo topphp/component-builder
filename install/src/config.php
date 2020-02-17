@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 return [
     'packages' => [
-        'topthink/framework'   => [
+        'topthink/framework'    => [
             'version' => '^6.0.2',
             // require为false时,加载到require-dev下
             "require" => true,
@@ -27,12 +27,21 @@ return [
 //                'default'  => 'n'
 //            ]
 //        ],
-        'swoole/ide-helper'    => [
+        'swoole/ide-helper'     => [
             'version' => '*',
             // require为false时,加载到require-dev下
-            "require" => false,
+            "require" => true,
             'options' => [
                 'question' => '需要安装 swoole/ide-helper 组件吗?',
+                'default'  => 'n'
+            ]
+        ],
+        'topphp/topphp-testing' => [
+            'version' => '*',
+            // require为false时,加载到require-dev下
+            "require" => true,
+            'options' => [
+                'question' => '需要安装 topphp/topphp-testing 组件吗?',
                 'default'  => 'n'
             ]
         ],
