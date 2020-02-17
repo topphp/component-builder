@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 return [
     'packages' => [
-        'topthink/framework' => [
+        'topthink/framework'   => [
             'version' => '^6.0.2',
             // require为false时,加载到require-dev下
             "require" => true,
@@ -18,8 +18,17 @@ return [
                 'default'  => 'n'
             ]
         ],
-        'swoole/ide-helper'  => [
-            'version' => '^1.0',
+//        'doctrine/annotations' => [
+//            'version' => '^1.8',
+//            // require为false时,加载到require-dev下
+//            "require" => true,
+//            'options' => [
+//                'question' => '需要安装 doctrine/annotations 组件吗?',
+//                'default'  => 'n'
+//            ]
+//        ],
+        'swoole/ide-helper'    => [
+            'version' => '*',
             // require为false时,加载到require-dev下
             "require" => false,
             'options' => [
