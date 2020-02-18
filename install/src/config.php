@@ -30,7 +30,7 @@ return [
         'swoole/ide-helper'     => [
             'version' => '*',
             // require为false时,加载到require-dev下
-            "require" => true,
+            "require" => false,
             'options' => [
                 'question' => '需要安装 swoole/ide-helper 组件吗?',
                 'default'  => 'n'
@@ -39,7 +39,7 @@ return [
         'topphp/topphp-testing' => [
             'version' => '*',
             // require为false时,加载到require-dev下
-            "require" => true,
+            "require" => false,
             'options' => [
                 'question' => '需要安装 topphp/topphp-testing 组件吗?',
                 'default'  => 'n'
