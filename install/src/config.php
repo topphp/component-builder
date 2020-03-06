@@ -18,15 +18,15 @@ return [
                 'default'  => 'n'
             ]
         ],
-//        'doctrine/annotations' => [
-//            'version' => '^1.8',
-//            // require为false时,加载到require-dev下
-//            "require" => true,
-//            'options' => [
-//                'question' => '需要安装 doctrine/annotations 组件吗?',
-//                'default'  => 'n'
-//            ]
-//        ],
+        'topphp/topphp-log'     => [
+            'version' => '^1.0.0',
+            // require为false时,加载到require-dev下
+            "require" => true,
+            'options' => [
+                'question' => '需要安装 topphp/topphp-log 日志组件吗?',
+                'default'  => 'n'
+            ]
+        ],
         'swoole/ide-helper'     => [
             'version' => '*',
             // require为false时,加载到require-dev下
@@ -37,13 +37,14 @@ return [
             ]
         ],
         'topphp/topphp-testing' => [
-            'version' => '*',
+            'version' => '^1.0.0',
             // require为false时,加载到require-dev下
             "require" => false,
             'options' => [
-                'question' => '需要安装 topphp/topphp-testing 组件吗?',
+                'question' => '需要安装 topphp/topphp-testing 单元测试组件吗?',
                 'default'  => 'n'
             ]
         ],
+
     ],
 ];
